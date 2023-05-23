@@ -1,9 +1,18 @@
 <template>
-  <nav>
-    <router-link to="/">Home</router-link> |
-    <router-link to="/about">About</router-link>
-  </nav>
-  <router-view/>
+  <div class="Navbar">
+    <div class="logo-bar">
+      <img src="./assets/maustrea-logo.png" class="logo-img" />
+      <h1>Maustrea</h1>
+    </div>
+    <div class="right-options">
+      <div class="options">
+        <label>Home</label>
+        <label>Products</label>
+        <label>Contact us</label>
+      </div>
+    </div>
+  </div>
+  <router-view />
 </template>
 
 <style lang="scss">
@@ -12,19 +21,47 @@
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
-  color: #2c3e50;
+}
+.Navbar {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 100%;
+  height: 90px;
+  background-color: white;
+  position: absolute;
 }
 
-nav {
-  padding: 30px;
+.logo-bar {
+  display: flex;
+  flex-direction: row;
+  margin: auto 50px;
+}
 
-  a {
-    font-weight: bold;
-    color: #2c3e50;
+.logo-img {
+  height: 50px;
+  width: 50px;
+  margin: auto 5%;
+  padding-right: 10px;
+}
 
-    &.router-link-exact-active {
-      color: #42b983;
-    }
-  }
+.right-options {
+  display: flex;
+  flex-direction: row;
+  margin: auto 5%;
+}
+
+.right-options label {
+  padding: 5px;
+  font-size: large;
+}
+
+.options {
+  margin-right: 10px;
+}
+
+#basket-icon {
+  font-size: 2rem;
+  margin-top: -5px;
 }
 </style>
