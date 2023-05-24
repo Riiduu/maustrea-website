@@ -1,6 +1,6 @@
 import { createRouter, createWebHistory } from "vue-router";
 import HomeView from "../views/HomeView.vue";
-import TropicalParadiseVue from "@/views/TropicalParadise.vue";
+import TropicalParadise from "@/views/TropicalParadise.vue";
 import OliveGarden from "@/views/OliveGarden.vue";
 
 const routes = [
@@ -12,7 +12,7 @@ const routes = [
   {
     path: "/tropical",
     name: "tropical",
-    component: TropicalParadiseVue,
+    component: TropicalParadise,
   },
   {
     path: "/olivegarden",

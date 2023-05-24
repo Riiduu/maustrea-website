@@ -34,7 +34,7 @@ export default {
   margin: 0;
   box-sizing: border-box;
   max-width: 100%;
-  max-height: 100vh;
+  max-height: calc(100% - 90px);
 }
 
 .blocks {
@@ -76,7 +76,7 @@ export default {
 .block--right {
   margin-left: -3.5rem;
   clip-path: polygon(4rem 0, 100% 0, 100% 100%, 0% 100%);
-  background: url("../assets/olive-bg.jpg");
+  background: url("../assets/olive-bg-1.jpg");
   background-size: cover;
   transition: ease 0.2s;
 

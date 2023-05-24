@@ -1,19 +1,47 @@
 <template>
-  <div class="Navbar">
+  <div class="Navbar" v-if="this.currentRouteName.toString() != 'home'">
     <div class="logo-bar">
       <img src="./assets/maustrea-logo.png" class="logo-img" />
-      <h1>Maustrea</h1>
+      <h1 @click="transferHome">Maustrea</h1>
     </div>
     <div class="right-options">
       <div class="options">
-        <label>Home</label>
-        <label>Products</label>
+        <label @click="transferHome">Home</label>
         <label>Contact us</label>
       </div>
     </div>
   </div>
   <router-view />
 </template>
+
+<script>
+import router from "./router";
+export default {
+  name: "HomeComponent",
+  methods: {
+    transferHome() {
+      router.push("/");
+    },
+  },
+  mounted() {
+    // if (pageLocation == "home") {
+    //   document.getElementsByClassName("Navbar").style.display = "none";
+    //   console.log("yeye");
+    // }
+    // if (this.currentRouteName.toString() == "home") {
+    //   document.getElementsByClassName("Navbar").document.style.display = "none";
+    // }
+  },
+  created() {
+    this.currentRoute;
+  },
+  computed: {
+    currentRouteName() {
+      return this.$route.name;
+    },
+  },
+};
+</script>
 
 <style lang="scss">
 #app {
@@ -29,13 +57,16 @@
   width: 100%;
   height: 90px;
   background-color: white;
-  position: absolute;
 }
 
 .logo-bar {
   display: flex;
   flex-direction: row;
   margin: auto 50px;
+
+  h1 {
+    cursor: pointer;
+  }
 }
 
 .logo-img {
@@ -58,10 +89,9 @@
 
 .options {
   margin-right: 10px;
-}
 
-#basket-icon {
-  font-size: 2rem;
-  margin-top: -5px;
+  label {
+    cursor: pointer;
+  }
 }
 </style>
